@@ -1,6 +1,6 @@
-﻿namespace GestaoLivraria
+﻿namespace GestaoLivraria.Dtos
 {
-    public class Book
+    public class BookDTO
     {
         public int Id { get; set; }
         public string Titulo { get; set; } = string.Empty;

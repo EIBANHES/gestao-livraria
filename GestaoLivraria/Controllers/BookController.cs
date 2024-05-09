@@ -1,5 +1,6 @@
 ﻿using GestaoLivraria.Communication.Requests;
 using GestaoLivraria.Communication.Responses;
+using GestaoLivraria.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestaoLivraria.Controllers
@@ -27,13 +28,13 @@ namespace GestaoLivraria.Controllers
         }
 
         [HttpGet("all-books")]
-        [ProducesResponseType(typeof(List<Book>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<BookDTO>), StatusCodes.Status200OK)]
         public IActionResult GetAll()
         {
-            var book = new List<Book>()
+            var book = new List<BookDTO>()
             {
-                new Book { Id = 0, Titulo = "teste", Autor = "emanuel", Genero = "cinema", Preco =  2.3f, Qntd_estoque = 10},
-                new Book { Id = 0, Titulo = "oi", Autor = "amanda", Genero = "romance", Preco =  2.3f, Qntd_estoque = 10}
+                new BookDTO { Id = 0, Titulo = "teste", Autor = "emanuel", Genero = "cinema", Preco =  2.3f, Qntd_estoque = 10},
+                new BookDTO { Id = 0, Titulo = "oi", Autor = "amanda", Genero = "romance", Preco =  2.3f, Qntd_estoque = 10}
             };
 
             return Ok(book);
